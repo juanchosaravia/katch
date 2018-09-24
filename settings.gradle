@@ -1,0 +1,2 @@
+include ':katch-core', ':katch-interceptor-okhttp', ':katch-ui-android', ':sample-ui-android-okhttp'
+enableFeaturePreview('GRADLE_METADATA')

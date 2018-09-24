@@ -1,0 +1,36 @@
+apply plugin: 'kotlin-multiplatform'
+apply plugin: 'maven-publish'
+
+
+kotlin {
+    targets {
+        fromPreset(presets.jvm, 'jvm')
+    }
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-stdlib-common'
+            }
+        }
+        commonTest {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-test-common'
+                implementation 'org.jetbrains.kotlin:kotlin-test-annotations-common'
+            }
+        }
+        jvmMain {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+                implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+                api 'com.katch:katch:0.0.1-SNAPSHOT'
+            }
+        }
+        jvmTest {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-test'
+                implementation 'org.jetbrains.kotlin:kotlin-test-junit'
+            }
+        }
+    }
+}
+kotlin.sourceSets.each { println it.kotlin.srcDirs }

@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.katch.ui">
+
+    <application>
+        <activity
+                android:name=".KatchActivity"
+                android:label="@string/title_activity_katch_config"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+    </application>
+
+</manifest>
